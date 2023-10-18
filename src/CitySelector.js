@@ -69,6 +69,7 @@ const CitySelector = () => {
     dispatch(filterCities());
   };
 
+
   return (
     <div className="container d-flex justify-content-center flex-column align-items-center">
       <div className="  ">
@@ -82,9 +83,17 @@ const CitySelector = () => {
             />
             <ul className="">
               {filteredCities?.map((city, index) => (
-                <li key={index} onClick={() => handleCitCheck(city)}>
-                  {city}
-                </li>
+                <div key={index} className="d-flex list-unstyled ">
+                 
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    onClick={() => handleCitCheck(city)}
+                  />
+                  <li className="mx-3">
+                    {city}
+                  </li>
+                </div>
               ))}
             </ul>
           </div>
